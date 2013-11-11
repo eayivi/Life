@@ -1,1 +1,50 @@
- 
+Running main() from gtest_main.cc
+[==========] Running 16 tests from 4 test cases.
+[----------] Global test environment set-up.
+[----------] 4 tests from Life
+[ RUN      ] Life.method1
+[       OK ] Life.method1 (6 ms)
+[ RUN      ] Life.method2
+[       OK ] Life.method2 (1 ms)
+[ RUN      ] Life.method3
+[       OK ] Life.method3 (1 ms)
+[ RUN      ] Life.method4
+[       OK ] Life.method4 (1 ms)
+[----------] 4 tests from Life (19 ms total)
+
+[----------] 4 tests from ConwayCell
+[ RUN      ] ConwayCell.method1
+[       OK ] ConwayCell.method1 (0 ms)
+[ RUN      ] ConwayCell.method2
+[       OK ] ConwayCell.method2 (1 ms)
+[ RUN      ] ConwayCell.method3
+[       OK ] ConwayCell.method3 (1 ms)
+[ RUN      ] ConwayCell.method4
+[       OK ] ConwayCell.method4 (1 ms)
+[----------] 4 tests from ConwayCell (5 ms total)
+
+[----------] 4 tests from FredkinCell
+[ RUN      ] FredkinCell.method1
+[       OK ] FredkinCell.method1 (1 ms)
+[ RUN      ] FredkinCell.method2
+[       OK ] FredkinCell.method2 (1 ms)
+[ RUN      ] FredkinCell.method3
+[       OK ] FredkinCell.method3 (1 ms)
+[ RUN      ] FredkinCell.method4
+[       OK ] FredkinCell.method4 (1 ms)
+[----------] 4 tests from FredkinCell (5 ms total)
+
+[----------] 4 tests from Cell
+[ RUN      ] Cell.method1
+[       OK ] Cell.method1 (1 ms)
+[ RUN      ] Cell.method2
+[       OK ] Cell.method2 (1 ms)
+[ RUN      ] Cell.method3
+[       OK ] Cell.method3 (1 ms)
+[ RUN      ] Cell.method4
+[       OK ] Cell.method4 (1 ms)
+[----------] 4 tests from Cell (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 4 test cases ran. (60 ms total)
+[  PASSED  ] 16 tests.
