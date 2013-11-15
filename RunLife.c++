@@ -30,13 +30,14 @@ To document the program:
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
 
+#include "Life.h"
 // ----
 // main
 // ----
 
 int main () {
     using namespace std;
-    ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
+    //ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
 
     // ------------------
     // Conway Cell 109x69
@@ -54,6 +55,8 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
+         
+
         }
     catch (const invalid_argument&) {
         assert(false);}
