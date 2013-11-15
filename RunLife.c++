@@ -29,6 +29,10 @@ To document the program:
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
+#include <fstream>
+using std::ifstream;
+#include <fstream>
+#include <string>
 
 #include "Life.h"
 // ----
@@ -55,7 +59,27 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-         
+        ifstream inFile;
+        inFile.open("RunLifeCell.in");
+        std::istream& m = inFile;
+        
+        if(!m){
+            cout << "File Not found "<< endl;
+        }
+
+        int i;
+        m >> i;
+
+        cout << i << endl;
+        m >> i;
+        cout << i << endl;
+
+        string ii;
+        while(m >> ii){
+            cout << ii << endl;
+        
+        }
+  
 
         }
     catch (const invalid_argument&) {
