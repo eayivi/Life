@@ -18,6 +18,6 @@ class AbstractCell {
 
   public:
     virtual bool turn() ;  // could check neighbors and follow rules   
-}
+};
 
     

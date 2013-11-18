@@ -35,6 +35,7 @@ using std::ifstream;
 #include <string>
 
 #include "Life.h"
+#include "Cell.h"
 // ----
 // main
 // ----
@@ -59,26 +60,27 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-        ifstream inFile;
-        inFile.open("RunLifeCell.in");
-        std::istream& m = inFile;
+        // ifstream inFile;
+        // inFile.open("RunLifeCell.in");
+        // std::istream& m = inFile;
         
-        if(!m){
-            cout << "File Not found "<< endl;
-        }
+        // if(!m){
+        //     cout << "File Not found "<< endl;
+        // }
 
-        int i;
-        m >> i;
+        // int i;
+        // m >> i;
 
-        cout << i << endl;
-        m >> i;
-        cout << i << endl;
+        // cout << i << endl;
+        // m >> i;
+        // cout << i << endl;
 
-        string ii;
-        while(m >> ii){
-            cout << ii << endl;
+        // string ii;
+        // while(m >> ii){
+        //     cout << ii << endl;
         
-        }
+        // }
+        Life<Cell> life("RunLifeCell.in");
   
 
         }
