@@ -54,31 +54,32 @@ int main () {
         /*
         read RunLifeConway.in // assume all Conway cells
         Simulate 283 moves.
-        Print the first 10 grids (i.e. 0, 1, 2...9).
-        Print the 283rd grid.
+            Print the first 10 grids (i.e. 0, 1, 2...9).
+            Print the 283rd grid.
         Simulate 40 moves.
         Print the 323rd grid.
         Simulate 2177 moves.
         Print the 2500th grid.
         */
 
-        
-        // string ii;
-        // while(m >> ii){
-        //     cout << ii << endl;
-        
-        // }
+        int num_row, num_col;
+
         ifstream file;
-        file.open("RunLifeCell.in");
+        file.open("RunLifeConway.in");
+
         if(!file){
             cout << "File Not found "<< endl;
         }
-        istream& fileStream = file;
-        Life<ConwayCell> life;
 
-        life.readBoardSize(fileStream);
-        life.replicateBoard(fileStream);
-  
+        file >> num_row;
+        file >> num_col;        
+
+        Life<ConwayCell> life(num_row, num_col);
+
+        // life.readBoardSize(fileStream);
+        life.replicateBoard(file);
+        life.printBoard(cout);
+        life.printNth(3) // this
 
         }
     catch (const invalid_argument&) {

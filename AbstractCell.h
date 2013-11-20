@@ -7,57 +7,43 @@
 
 #include <iostream> // istream, ostream
 #include <utility>  // !=
-
+using namespace std;
 class AbstractCell {
-    // friend bool operator == (const AbstractCell& lhs, const AbstractCell& rhs) {
-    //     return lhs.equals(rhs);}
-
-    // friend std::istream& operator >> (std::istream& lhs, AbstractCell& rhs) {
-    //     return rhs.read(lhs);}
-
-    // friend std::ostream& operator << (std::ostream& lhs, const AbstractCell& rhs) {
-    //     return rhs.write(lhs);}
 
     private:
-        bool _isAlive;
-        int _x;
-        int _y;
-
-
+        
     protected:
-        AbstractCell& operator = (const AbstractCell& that) {
-            _x = that._x;
-            _y = that._y;
-            return *this;}
-
-        // virtual bool equals (const AbstractCell& that) const = 0;
-
-        // virtual std::istream& read (std::istream& in) = 0;
-
-        // virtual std::ostream& write (std::ostream& out) const = 0;
+        bool _isAlive;
+        int neighbors_cnt;
 
     public:
-        AbstractCell (bool alive, int x, int y) :
-                _isAlive(alive),
-                _x (x),
-                _y (y)
+
+        AbstractCell (bool alive, int neighbors_cnt = 0) :
+                _isAlive(alive)
             {}
 
+        bool get_liveness() {
+
+            if (_isAlive == true) {
+                return true;
+            } else
+                return false;
+        }
+
+        virtual void print_cell (ostream&) = 0;
+
+        virtual void set_neighbors (int x) = 0;
 /*
         AbstractCell (const AbstractCell& that) :
                 _x (that._x),
                 _y (that._y)
             {}
 */
-        virtual ~AbstractCell ()
-            {}
+        // virtual ~AbstractCell ()
+        //     {}
 
-        virtual double area () const = 0;
 
-        virtual AbstractCell* clone () const = 0;
-
-        void move (int x, int y) {
-            _x = x;
-            _y = y;}};
+       // virtual AbstractCell* clone () const = 0;
+};
 
  #endif // AbstractCell_h

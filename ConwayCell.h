@@ -13,7 +13,9 @@
 #include <iostream> // istream, ostream
 #include "AbstractCell.h"
 
+using namespace std;
 class ConwayCell : public AbstractCell {
+
     private:
  
 
@@ -30,9 +32,25 @@ class ConwayCell : public AbstractCell {
             return AbstractCell::write(out) << " " << _r;}*/
 
     public:
-        ConwayCell (bool alive, int x, int y) :
-                AbstractCell (alive, x, y)
-            {}
+        ConwayCell (char c) :   AbstractCell (false) {
+
+            if ( c=='*') {
+                 _isAlive = true;
+            }
+        }
+        
+        void set_neighbors (int x) {
+            neighbors_cnt = x;
+
+        }
+
+        void print_cell (std::ostream& w)  {
+            if (_isAlive)
+                w << '*';
+            else
+                w << '.';
+        }
+
 /*
         ConwayCell (const ConwayCell& that) :
                 AbstractCell (that),

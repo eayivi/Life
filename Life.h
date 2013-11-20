@@ -15,7 +15,6 @@
 #include "AbstractCell.h"
 #include "Cell.h"
 
-using namespace std;
 
 template <typename T>
 class Life{
@@ -23,55 +22,61 @@ class Life{
     private:
       int row_size; 
       int col_size;  
-     
-     public:    
+    
       vector< vector<T> > board; 
 
+
     public: 
-        Life(){
+        Life();
 
+        Life (int num_row, int num_col) : row_size(num_row), col_size (num_col) {
+            
         }
-
-        void readBoardSize(istream& in){
-          in >> row_size;
-          in >> col_size;
-          cout << "Board size: " << row_size << " x " << col_size <<endl;
-        }
-
 
         void replicateBoard(istream& in){
+            char currentCell;
+            for(int i = 0; i < row_size; i++){ 
+                vector<T> temp;  
+                for(int j = 0; j < col_size; j++){
+                  in >> currentCell;
 
-          char currentCell;
-          for(int i = 0; i < row_size; i++){
-            for(int j = 0; j < col_size; j++){
-              in >> currentCell;
-
-              bool alive = true;
-              if(currentCell == '.' || currentCell == '-'){
-                alive = false;
-              }
-
-              AbstractCell* thisCell;
-              //If Conway Cell '.' or '*'
-              if(currentCell == '.' || currentCell == '*'){
-                ConwayCell conway(alive, i, j);
-                // board[i][j] = Cell 
-                thisCell = &conway;
-              }
-              //If Fredkin Cell '-', '+', and 0-9
-              else if((currentCell == '-') || (currentCell =='+') || (currentCell >= '0' && currentCell <= '9')){
-                // FredkinCell frankin(alive,i,j);
-                // thisCell = &frankin;
-              } else {
-                cout << "!!!!!!!!!!!!!!Wrong Input format!!!!!!!!!!" << endl;
-              }
-
-              Cell cell(thisCell);
-              board[i][j] = cell;
+                  //If Conway Cell '.' or '*'
+                  if(currentCell == '.' || currentCell == '*'){
+                    ConwayCell conway(currentCell);
+                    temp.push_back(conway);
+                  }
+                  //If Fredkin Cell '-', '+', and 0-9
+                  else if((currentCell == '-') || (currentCell =='+') || (currentCell >= '0' && currentCell <= '9')){
+                    // FredkinCell frankin(alive,i,j);
+                    // thisCell = &frankin;
+                  } else {
+                    cout << "!!!!!!!!!!!!!!Wrong Input format!!!!!!!!!!" << endl;
+                  }
+                }
+                board.push_back(temp);
             }
-          }
+    
+       }
 
-        }
+       void update_neighbors () {
+            for(int i = 0; i < row_size; i++){ 
+                for(int j = 0; j < col_size; j++){
+                    
+                }
+
+            }        
+
+       }
+
+        void printBoard(std::ostream& w) {
+
+            for (int i = 0; i < row_size; ++i){
+                for (int j= 0; j <col_size ; ++j) {
+                    board[i][j].print_cell(w);
+                }
+                w << endl;
+            }
+       }
 
 
  };
