@@ -1,58 +1,53 @@
- 
+ // --------
+// FredkinCell.c++
 // --------
-// FredkinCell.h
-// --------
+#include <iostream> 
+#include <utility>  
+#include <iostream> 
 
-#ifndef Cell_h
-#define Cell_h
+// class FredkinCell : public AbstractCell {
+//     private:
+//         int _r;
 
-#include <iostream> // istream, ostream
-#include <utility>  // !=
-#include <iostream> // istream, ostream
+//     protected:
+//         virtual bool equals (const AbstractCell& that) const {
+//             if (const FredkinCell* const p = dynamic_cast<const FredkinCell*>(&that))
+//                 return AbstractCell::equals(*p) && (_r == p->_r);
+//             return false;}
 
-class FredkinCell : public AbstractCell {
-    private:
-        int _r;
+//         virtual std::istream& read (std::istream& in) {
+//             return AbstractCell::read(in) >> _r;}
 
-    protected:
-        virtual bool equals (const AbstractCell& that) const {
-            if (const FredkinCell* const p = dynamic_cast<const FredkinCell*>(&that))
-                return AbstractCell::equals(*p) && (_r == p->_r);
-            return false;}
+//         virtual std::ostream& write (std::ostream& out) const {
+//             return AbstractCell::write(out) << " " << _r;}
 
-        virtual std::istream& read (std::istream& in) {
-            return AbstractCell::read(in) >> _r;}
+//     public:
+//         FredkinCell (int x, int y, int r) :
+//                 AbstractCell (x, y),
+//                 _r            (r)
+//             {}
+// /*
+//         FredkinCell (const ConwayCell& that) :
+//                 AbstractCell (that),
+//                 _r            (that._r)
+//             {}
 
-        virtual std::ostream& write (std::ostream& out) const {
-            return AbstractCell::write(out) << " " << _r;}
+//         virtual ~FredkinCell ()
+//             {}
 
-    public:
-        FredkinCell (int x, int y, int r) :
-                AbstractCell (x, y),
-                _r            (r)
-            {}
-/*
-        FredkinCell (const ConwayCell& that) :
-                AbstractCell (that),
-                _r            (that._r)
-            {}
+//         FredkinCell& operator = (const FredkinCell& that) {
+//             AbstractCell::operator=(that);
+//             _r = that._r;
+//             return *this;}
+// */
 
-        virtual ~FredkinCell ()
-            {}
+//         virtual double area () const {
+//             return 3.14 * _r * _r;}
 
-        FredkinCell& operator = (const FredkinCell& that) {
-            AbstractCell::operator=(that);
-            _r = that._r;
-            return *this;}
-*/
+//         virtual FredkinCell* clone () const {
+//             return new ConwayCell(*this);}
 
-        virtual double area () const {
-            return 3.14 * _r * _r;}
-
-        virtual FredkinCell* clone () const {
-            return new ConwayCell(*this);}
-
-        int radius () const {
-            return _r;}};
+//         int radius () const {
+//             return _r;}};
  
 

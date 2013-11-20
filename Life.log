@@ -1,3 +1,45 @@
+commit ee882ec79f58d285e734e305d0c5dd0081bd8ef2
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:24:11 2013 -0600
+
+    Update Cell.c++
+
+commit b03cd9acf5163afbfd125c243d2431ca7d5797ae
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:21:54 2013 -0600
+
+    Update FredkinCell.c++
+
+commit b3ed9256ad0a2eca2e8dafec8a7f30e38d76358d
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:20:36 2013 -0600
+
+    Update ConwayCell.c++
+
+commit 8a9cb5534cd43a1f1736a19894276368303d1a15
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:19:20 2013 -0600
+
+    Class declaration goes into ConwayCell.c++
+
+commit 00e75a759845f713c261f13cb71f6499579b7f31
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:18:21 2013 -0600
+
+    Define ConwayCell
+
+commit 1d0dce6027ff510d9ef09092dbb648b1fe59217a
+Author: eayivi <enam.ayivi@utexas.edu>
+Date:   Tue Nov 19 16:10:19 2013 -0600
+
+    Define class AbstractCell
+
+commit 196487b63f0bfb9fb0822e0c5421c23256f5f71c
+Author: Cristhian Escobar <cje466@cs.utexas.edu>
+Date:   Mon Nov 18 11:48:10 2013 -0600
+
+    Start 2
+
 commit d3ffe05fe31267aacbb542944f48d3cf2bef9593
 Author: Cristhian Escobar <cje466@cs.utexas.edu>
 Date:   Thu Nov 14 20:41:23 2013 -0600
