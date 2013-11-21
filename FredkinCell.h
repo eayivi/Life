@@ -47,8 +47,19 @@ class FredkinCell : public AbstractCell {
             neighbors_cnt = 0;
         }
 
-        // ConwayCell* clone () const {
-        //     return new ConwayCell(*this);}
+        AbstractCell * mutate() {
+            if (age == 2) {
+                cout << " I'm 2!!! :)" << endl;
+                ConwayCell * p = new ConwayCell(_isAlive, neighbors_cnt);
+                swap(p);
+            }
+            return this;
+
+
+        }
+
+        FredkinCell* clone () const {
+            return new FredkinCell(*this);}
 };
 #endif // FredkinCell_h
   

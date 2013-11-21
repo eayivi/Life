@@ -30,15 +30,63 @@ To document the program:
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
 #include <fstream>
-using std::ifstream;
-#include <fstream>
 #include <string>
 #include "Life.h"
-#include "Cell.h"
 #include "ConwayCell.h"
+
+using std::ifstream;
 // ----
 // main
 // ----
+
+// --------
+// includes
+// --------
+#include "Handle.h"
+#include "AbstractCell.h"
+
+
+class Cell : Handle<AbstractCell> {
+
+ //    private:     
+    //  AbstractCell* abstractCell;
+
+    public:
+
+        Cell () : Handle( new FredkinCell()) {}
+
+        Cell(AbstractCell* p) : 
+            Handle<AbstractCell> (p){};
+
+
+        void print_cell(std::ostream& w) {
+            get()->print_cell(w);
+        }
+
+        void cometolife(){
+            get()->cometolife();
+        }
+    
+        bool get_liveness() {
+            return get()->get_liveness();
+        }
+
+        void set_straight_neighbors (int x) {
+           get()->set_straight_neighbors(x);
+        };
+
+        void set_diag_neighbors(int x) {
+            get()->set_diag_neighbors(x);    
+        }
+
+        void evolve() {
+            get()->evolve();
+            get()->mutate();
+        }
+};
+
+
+
 
 int main () {
     using namespace std;
@@ -101,27 +149,25 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-        int num_row, num_col;
 
-        ifstream file;
-        file.open("RunLifeFredkin.in");
+        // int num_row, num_col;
 
-        if(!file){
-            cout << "File Not found "<< endl;
-        }
+        // ifstream file;
+        // file.open("RunLifeFredkin.in");
 
-        file >> num_row;
-        file >> num_col;        
+        // if(!file){
+        //     cout << "File Not found "<< endl;
+        // }
 
-        //cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
-        Life<FredkinCell> life(num_row, num_col);
+        // file >> num_row;
+        // file >> num_col;        
 
-        // life.readBoardSize(fileStream);
-        life.replicateBoard(file);
-        life.simulateNth(5,5);
-        life.printBoard(cout);
+        // Life<FredkinCell> life(num_row, num_col);
 
-        //life.printBoard(cout);
+        // life.replicateBoard(file);
+        // life.simulateNth(5,5);
+        // life.printBoard(cout);
+
 
         }
     catch (const invalid_argument&) {
@@ -133,36 +179,35 @@ int main () {
     // Cell 20x20
     // ----------
 
-    // try {
-    //     cout << "*** Life<Cell> 20x20 ***" << endl;
-    //     /*
-    //     read RunLifeCell.in // assume all Fredkin cells
-    //     Simulate 5 moves.
-    //     Print every grid (i.e. 0, 1, 2...5)
-    //     */
-    //     int num_row, num_col;
+    try {
+        cout << "*** Life<Cell> 20x20 ***" << endl;
+        /*
+        read RunLifeCell.in // assume all Fredkin cells
+        Simulate 5 moves.
+        Print every grid (i.e. 0, 1, 2...5)
+        */
+        int num_row, num_col;
 
-    //     ifstream file;
-    //     file.open("RunLifeConway.in");
+        ifstream file;
+        file.open("RunLifeCell.in");
 
-    //     if(!file){
-    //         cout << "File Not found "<< endl;
-    //     }
+        if(!file){
+            cout << "File Not found "<< endl;
+        }
 
-    //     file >> num_row;
-    //     file >> num_col;        
+        file >> num_row;
+        file >> num_col;        
 
-    //     Life<Cell> life(num_row, num_col);
-    //     life.printBoard(cout);
+        Life<Cell> life(num_row, num_col);
 
-    //     // life.readBoardSize(fileStream);
-    //     life.replicateBoard(file);
-    //     life.printBoard(cout);
+        life.replicateBoard(file);
+        life.simulateNth(5,5);
+        life.printBoard(cout);
 
-    //     }
-    // catch (const invalid_argument&) {
-    //     assert(false);}
-    // catch (const out_of_range&) {
-    //     assert(false);}
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
 
     return 0;}

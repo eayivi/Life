@@ -5,7 +5,7 @@
 #include "Cell.h"
 
 
-
+//Cell::Cell(AbstractCell * p) : Handle<AbstractCell> (p) {}
         // Cell::Cell (const Cell& that) :
         //         _x (that._x),
         //         _y (that._y)

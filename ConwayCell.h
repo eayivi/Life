@@ -36,6 +36,11 @@ class ConwayCell : public AbstractCell {
             //_isAlive = true;
         }
 
+        ConwayCell (bool alive, int neighbors) :   AbstractCell (alive, neighbors) {
+            //_isAlive = true;
+        }
+
+
         void set_diag_neighbors(int x) {
             neighbors_cnt += x;
         }
@@ -56,6 +61,10 @@ class ConwayCell : public AbstractCell {
             }
             neighbors_cnt = 0;
         }
+
+        AbstractCell* mutate() {
+            return this;
+        }
 /*
         ConwayCell (const ConwayCell& that) :
                 AbstractCell (that),
@@ -74,8 +83,8 @@ class ConwayCell : public AbstractCell {
         // double area () const {
         //     return 3.14 * _r * _r;}
 
-        // ConwayCell* clone () const {
-        //     return new ConwayCell(*this);}
+        ConwayCell* clone () const {
+            return new ConwayCell(*this);}
 
         // int radius () const {
         //     return _r;}

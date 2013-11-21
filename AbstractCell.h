@@ -48,6 +48,12 @@ class AbstractCell {
                 _isAlive = true;
         }
 
+        virtual void set_diag_neighbors(int x) =0;
+
+        virtual void evolve() =0;
+
+        virtual AbstractCell* mutate() =0;
+
         //virtual void evolve() = 0;
 /*
         AbstractCell (const AbstractCell& that) :
@@ -59,7 +65,7 @@ class AbstractCell {
         //     {}
 
 
-       // virtual AbstractCell* clone () const = 0;
+        virtual AbstractCell* clone () const = 0;
 };
 
  #endif // AbstractCell_h
