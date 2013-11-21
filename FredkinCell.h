@@ -17,17 +17,10 @@ class FredkinCell : public AbstractCell {
 
 
     public:
-        FredkinCell (char c) :   AbstractCell () {
+        FredkinCell () :   AbstractCell () {
 
 
-            if ( c=='+') {
-                 _isAlive = true;
-                 age = 10;
-            }
-            else if (c >= '0' && c <= '9') {
-                age = c - '0';
-                _isAlive = true;
-            }
+           age = 0;
         }
         
         void set_neighbors (int x) {

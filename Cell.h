@@ -12,7 +12,7 @@
 #include "AbstractCell.h"
 
 
-class Cell : Handle<AbstractCell> {
+class Cell : Handle<new FranklinCell> {
 
 
 	// friend bool operator == (const Cell& lhs, const Cell& rhs) {

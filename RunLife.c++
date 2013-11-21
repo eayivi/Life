@@ -75,7 +75,8 @@ int main () {
         file >> num_col;        
 
         Life<ConwayCell> life(num_row, num_col);
-   
+        life.printBoard(cout);
+
         // life.readBoardSize(fileStream);
         life.replicateBoard(file);
         life.printBoard(cout);
@@ -97,24 +98,25 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
-        // int num_row, num_col;
+        int num_row, num_col;
 
-        // ifstream file;
-        // file.open("RunLifeFredkin.in");
+        ifstream file;
+        file.open("RunLifeFredkin.in");
 
-        // if(!file){
-        //     cout << "File Not found "<< endl;
-        // }
+        if(!file){
+            cout << "File Not found "<< endl;
+        }
 
-        // file >> num_row;
-        // file >> num_col;        
+        file >> num_row;
+        file >> num_col;        
 
-        // cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
-        // Life<FredkinCell> life(num_row, num_col);
+        cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
+        Life<FredkinCell> life(num_row, num_col);
+        life.printBoard(cout);
 
-        // // life.readBoardSize(fileStream);
-        // life.replicateBoard(file);
-        // // life.printBoard(cout);
+        // life.readBoardSize(fileStream);
+        life.replicateBoard(file);
+        life.printBoard(cout);
 
         }
     catch (const invalid_argument&) {
@@ -133,6 +135,25 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
+        int num_row, num_col;
+
+        ifstream file;
+        file.open("RunLifeConway.in");
+
+        if(!file){
+            cout << "File Not found "<< endl;
+        }
+
+        file >> num_row;
+        file >> num_col;        
+
+        Life<Cell> life(num_row, num_col);
+        life.printBoard(cout);
+
+        // life.readBoardSize(fileStream);
+        life.replicateBoard(file);
+        life.printBoard(cout);
+
         }
     catch (const invalid_argument&) {
         assert(false);}

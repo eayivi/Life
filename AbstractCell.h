@@ -18,7 +18,7 @@ class AbstractCell {
 
     public:
 
-        AbstractCell (bool alive =false, int neighbors_cnt = 0) :
+        AbstractCell (bool alive =true, int neighbors_cnt = 0) :
                 _isAlive(alive)
             {}
 
@@ -33,6 +33,14 @@ class AbstractCell {
         virtual void print_cell (ostream&) = 0;
 
         virtual void set_neighbors (int x) = 0;
+
+        void flipLiveStatus(){
+            if(_isAlive){
+                _isAlive = false;
+            }else{
+                _isAlive = true;
+            }
+        }
 /*
         AbstractCell (const AbstractCell& that) :
                 _x (that._x),

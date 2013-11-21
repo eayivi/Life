@@ -32,11 +32,8 @@ class ConwayCell : public AbstractCell {
             return AbstractCell::write(out) << " " << _r;}*/
 
     public:
-        ConwayCell (char c) :   AbstractCell () {
-
-            if ( c=='*') {
-                 _isAlive = true;
-            }
+        ConwayCell () :   AbstractCell () {
+            _isAlive = true;
         }
         
         void set_neighbors (int x) {
