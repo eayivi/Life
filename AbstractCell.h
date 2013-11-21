@@ -52,7 +52,7 @@ class AbstractCell {
 
         virtual void evolve() =0;
 
-        virtual AbstractCell* mutate() =0;
+        virtual bool mutate() =0;
 
         //virtual void evolve() = 0;
 /*

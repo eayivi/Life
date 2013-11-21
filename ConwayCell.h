@@ -28,7 +28,7 @@ class ConwayCell : public AbstractCell {
         /*std::istream& read (std::istream& in) {
             return AbstractCell::read(in) >> _r;}*/
 
-        /*std::ostream& write (std::ostream& out) const {
+       /*std::ostream& write (std::ostream& out) const {
             return AbstractCell::write(out) << " " << _r;}*/
 
     public:
@@ -36,7 +36,7 @@ class ConwayCell : public AbstractCell {
             //_isAlive = true;
         }
 
-        ConwayCell (bool alive, int neighbors) :   AbstractCell (alive, neighbors) {
+        ConwayCell (bool alive, int neighbors = 0) :   AbstractCell (alive, neighbors) {
             //_isAlive = true;
         }
 
@@ -62,9 +62,17 @@ class ConwayCell : public AbstractCell {
             neighbors_cnt = 0;
         }
 
-        AbstractCell* mutate() {
+       /* AbstractCell* mutate() {
             return this;
+        }*/
+
+        bool mutate () {
+          return false;     // Conway Cells never mutate
         }
+
+
+
+
 /*
         ConwayCell (const ConwayCell& that) :
                 AbstractCell (that),

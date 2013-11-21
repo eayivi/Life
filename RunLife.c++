@@ -81,7 +81,14 @@ class Cell : Handle<AbstractCell> {
 
         void evolve() {
             get()->evolve();
-            get()->mutate();
+
+            if (get()->mutate()) {
+              bool isAlive = get()->get_liveness();
+              AbstractCell* ptr = new ConwayCell (isAlive);
+              Cell q(ptr);
+              swap (q);
+             // p = X.clone();
+            }
         }
 };
 
