@@ -54,8 +54,8 @@ int main () {
         /*
         read RunLifeConway.in // assume all Conway cells
         Simulate 283 moves.
-            Print the first 10 grids (i.e. 0, 1, 2...9).
-            Print the 283rd grid.
+        Print the first 10 grids (i.e. 0, 1, 2...9).
+        Print the 283rd grid.
         Simulate 40 moves.
         Print the 323rd grid.
         Simulate 2177 moves.
@@ -75,11 +75,10 @@ int main () {
         file >> num_col;        
 
         Life<ConwayCell> life(num_row, num_col);
-
+   
         // life.readBoardSize(fileStream);
         life.replicateBoard(file);
         life.printBoard(cout);
-        life.printNth(3) // this
 
         }
     catch (const invalid_argument&) {
@@ -98,6 +97,25 @@ int main () {
         Simulate 5 moves.
         Print every grid (i.e. 0, 1, 2...5)
         */
+        // int num_row, num_col;
+
+        // ifstream file;
+        // file.open("RunLifeFredkin.in");
+
+        // if(!file){
+        //     cout << "File Not found "<< endl;
+        // }
+
+        // file >> num_row;
+        // file >> num_col;        
+
+        // cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
+        // Life<FredkinCell> life(num_row, num_col);
+
+        // // life.readBoardSize(fileStream);
+        // life.replicateBoard(file);
+        // // life.printBoard(cout);
+
         }
     catch (const invalid_argument&) {
         assert(false);}

@@ -18,7 +18,7 @@ class AbstractCell {
 
     public:
 
-        AbstractCell (bool alive, int neighbors_cnt = 0) :
+        AbstractCell (bool alive =false, int neighbors_cnt = 0) :
                 _isAlive(alive)
             {}
 

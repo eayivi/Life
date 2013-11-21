@@ -9,50 +9,46 @@
 #include <iostream> // istream, ostream
 #include "AbstractCell.h"
 
-// class FredkinCell : public AbstractCell {
-//     private:
-//         int _r;
+using namespace std;
+class FredkinCell : public AbstractCell {
 
-//     protected:
-//         /*bool equals (const AbstractCell& that) const {
-//             if (const FredkinCell* const p = dynamic_cast<const FredkinCell*>(&that))
-//                 return AbstractCell::equals(*p) && (_r == p->_r);
-//             return false;}*/
+    private:
+        int age;
 
-//         std::istream& read (std::istream& in) {
-//             return AbstractCell::read(in) >> _r;}
 
-//         /*std::ostream& write (std::ostream& out) const {
-//             return AbstractCell::write(out) << " " << _r;}*/
+    public:
+        FredkinCell (char c) :   AbstractCell () {
 
-//     public:
-//         FredkinCell (int x, int y, int r) :
-//                 AbstractCell (x, y),
-//                 _r            (r)
-//             {}
-/*
-        FredkinCell (const ConwayCell& that) :
-                AbstractCell (that),
-                _r            (that._r)
-            {}
 
-        virtual ~FredkinCell ()
-            {}
+            if ( c=='+') {
+                 _isAlive = true;
+                 age = 10;
+            }
+            else if (c >= '0' && c <= '9') {
+                age = c - '0';
+                _isAlive = true;
+            }
+        }
+        
+        void set_neighbors (int x) {
+            neighbors_cnt = x;
 
-        FredkinCell& operator = (const FredkinCell& that) {
-            AbstractCell::operator=(that);
-            _r = that._r;
-            return *this;}
-*/
+        }
 
-        // double area () const {
-        //     return 3.14 * _r * _r;}
+        void print_cell (std::ostream& w)  {
+            if (_isAlive) {
+               if (age < 10) {
+                    w << age;
+               } else 
+                    w << "+";
+            }
+            else
+                w << '-';
+        }
 
-  /*      FredkinCell* clone () const {
-            return new ConwayCell(*this);}*/
 
-        // int radius () const {
-        //     return _r;} };
-
- #endif // FredkinCell_h
+        // ConwayCell* clone () const {
+        //     return new ConwayCell(*this);}
+};
+#endif // FredkinCell_h
   

@@ -32,7 +32,7 @@ class ConwayCell : public AbstractCell {
             return AbstractCell::write(out) << " " << _r;}*/
 
     public:
-        ConwayCell (char c) :   AbstractCell (false) {
+        ConwayCell (char c) :   AbstractCell () {
 
             if ( c=='*') {
                  _isAlive = true;
