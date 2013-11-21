@@ -14,12 +14,12 @@ class AbstractCell {
         
     protected:
         bool _isAlive;
-        int neighbors_cnt;
+        int neighbors_cnt;        
 
     public:
 
-        AbstractCell (bool alive =true, int neighbors_cnt = 0) :
-                _isAlive(alive)
+        AbstractCell (bool alive =false, int neighbors = 0) :
+                _isAlive(alive), neighbors_cnt(neighbors)
             {}
 
         bool get_liveness() {
@@ -32,7 +32,9 @@ class AbstractCell {
 
         virtual void print_cell (ostream&) = 0;
 
-        virtual void set_neighbors (int x) = 0;
+        void set_straight_neighbors (int x) {
+            neighbors_cnt = x;      // not neighbors_cnt+=x, since it's a reset
+        };
 
         void flipLiveStatus(){
             if(_isAlive){
@@ -41,6 +43,12 @@ class AbstractCell {
                 _isAlive = true;
             }
         }
+
+        void cometolife(){
+                _isAlive = true;
+        }
+
+        //virtual void evolve() = 0;
 /*
         AbstractCell (const AbstractCell& that) :
                 _x (that._x),

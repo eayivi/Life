@@ -18,14 +18,11 @@ class FredkinCell : public AbstractCell {
 
     public:
         FredkinCell () :   AbstractCell () {
-
-
            age = 0;
         }
         
-        void set_neighbors (int x) {
-            neighbors_cnt = x;
-
+        void set_diag_neighbors(int x) {
+            // pass
         }
 
         void print_cell (std::ostream& w)  {
@@ -39,6 +36,16 @@ class FredkinCell : public AbstractCell {
                 w << '-';
         }
 
+        void evolve() {
+
+            if (!_isAlive and (neighbors_cnt == 3 or neighbors_cnt ==1) )  {
+                _isAlive = true;
+            } else if (_isAlive and neighbors_cnt < 2 and neighbors_cnt >3) {
+                _isAlive = false;
+            }
+            age++;
+            neighbors_cnt = 0;
+        }
 
         // ConwayCell* clone () const {
         //     return new ConwayCell(*this);}

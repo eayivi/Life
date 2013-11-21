@@ -33,7 +33,6 @@ To document the program:
 using std::ifstream;
 #include <fstream>
 #include <string>
-
 #include "Life.h"
 #include "Cell.h"
 #include "ConwayCell.h"
@@ -75,12 +74,16 @@ int main () {
         file >> num_col;        
 
         Life<ConwayCell> life(num_row, num_col);
-        life.printBoard(cout);
-
+ 
         // life.readBoardSize(fileStream);
         life.replicateBoard(file);
-        life.printBoard(cout);
 
+        life.simulateNth(283,10);
+        life.printBoard(cout);
+        life.simulateNth(40);
+        life.printBoard(cout);
+        life.simulateNth(2177);
+        life.printBoard(cout);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -110,13 +113,15 @@ int main () {
         file >> num_row;
         file >> num_col;        
 
-        cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
+        //cout << " the num or rows is " << num_row << " and col is " << num_row  << endl;
         Life<FredkinCell> life(num_row, num_col);
-        life.printBoard(cout);
 
         // life.readBoardSize(fileStream);
         life.replicateBoard(file);
+        life.simulateNth(5,5);
         life.printBoard(cout);
+
+        //life.printBoard(cout);
 
         }
     catch (const invalid_argument&) {
@@ -128,36 +133,36 @@ int main () {
     // Cell 20x20
     // ----------
 
-    try {
-        cout << "*** Life<Cell> 20x20 ***" << endl;
-        /*
-        read RunLifeCell.in // assume all Fredkin cells
-        Simulate 5 moves.
-        Print every grid (i.e. 0, 1, 2...5)
-        */
-        int num_row, num_col;
+    // try {
+    //     cout << "*** Life<Cell> 20x20 ***" << endl;
+    //     /*
+    //     read RunLifeCell.in // assume all Fredkin cells
+    //     Simulate 5 moves.
+    //     Print every grid (i.e. 0, 1, 2...5)
+    //     */
+    //     int num_row, num_col;
 
-        ifstream file;
-        file.open("RunLifeConway.in");
+    //     ifstream file;
+    //     file.open("RunLifeConway.in");
 
-        if(!file){
-            cout << "File Not found "<< endl;
-        }
+    //     if(!file){
+    //         cout << "File Not found "<< endl;
+    //     }
 
-        file >> num_row;
-        file >> num_col;        
+    //     file >> num_row;
+    //     file >> num_col;        
 
-        Life<Cell> life(num_row, num_col);
-        life.printBoard(cout);
+    //     Life<Cell> life(num_row, num_col);
+    //     life.printBoard(cout);
 
-        // life.readBoardSize(fileStream);
-        life.replicateBoard(file);
-        life.printBoard(cout);
+    //     // life.readBoardSize(fileStream);
+    //     life.replicateBoard(file);
+    //     life.printBoard(cout);
 
-        }
-    catch (const invalid_argument&) {
-        assert(false);}
-    catch (const out_of_range&) {
-        assert(false);}
+    //     }
+    // catch (const invalid_argument&) {
+    //     assert(false);}
+    // catch (const out_of_range&) {
+    //     assert(false);}
 
     return 0;}

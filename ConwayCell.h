@@ -33,14 +33,13 @@ class ConwayCell : public AbstractCell {
 
     public:
         ConwayCell () :   AbstractCell () {
-            _isAlive = true;
+            //_isAlive = true;
+        }
+
+        void set_diag_neighbors(int x) {
+            neighbors_cnt += x;
         }
         
-        void set_neighbors (int x) {
-            neighbors_cnt = x;
-
-        }
-
         void print_cell (std::ostream& w)  {
             if (_isAlive)
                 w << '*';
@@ -48,6 +47,15 @@ class ConwayCell : public AbstractCell {
                 w << '.';
         }
 
+        void evolve() {
+
+            if (!_isAlive and neighbors_cnt == 3) {
+                _isAlive = true;
+            } else if (_isAlive and (neighbors_cnt < 2 or neighbors_cnt >3) ) {
+                _isAlive = false;
+            }
+            neighbors_cnt = 0;
+        }
 /*
         ConwayCell (const ConwayCell& that) :
                 AbstractCell (that),

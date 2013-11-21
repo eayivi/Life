@@ -3,14 +3,14 @@ Running main() from gtest_main.cc
 [----------] Global test environment set-up.
 [----------] 4 tests from Life
 [ RUN      ] Life.method1
-[       OK ] Life.method1 (7 ms)
+[       OK ] Life.method1 (6 ms)
 [ RUN      ] Life.method2
 [       OK ] Life.method2 (1 ms)
 [ RUN      ] Life.method3
 [       OK ] Life.method3 (1 ms)
 [ RUN      ] Life.method4
 [       OK ] Life.method4 (1 ms)
-[----------] 4 tests from Life (21 ms total)
+[----------] 4 tests from Life (20 ms total)
 
 [----------] 4 tests from ConwayCell
 [ RUN      ] ConwayCell.method1
@@ -32,7 +32,7 @@ Running main() from gtest_main.cc
 [       OK ] FredkinCell.method3 (1 ms)
 [ RUN      ] FredkinCell.method4
 [       OK ] FredkinCell.method4 (1 ms)
-[----------] 4 tests from FredkinCell (4 ms total)
+[----------] 4 tests from FredkinCell (5 ms total)
 
 [----------] 4 tests from Cell
 [ RUN      ] Cell.method1
@@ -42,8 +42,8 @@ Running main() from gtest_main.cc
 [ RUN      ] Cell.method3
 [       OK ] Cell.method3 (1 ms)
 [ RUN      ] Cell.method4
-[       OK ] Cell.method4 (1 ms)
-[----------] 4 tests from Cell (4 ms total)
+[       OK ] Cell.method4 (2 ms)
+[----------] 4 tests from Cell (5 ms total)
 
 [----------] Global test environment tear-down
 [==========] 16 tests from 4 test cases ran. (63 ms total)
