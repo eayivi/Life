@@ -40,10 +40,10 @@ class FredkinCell : public AbstractCell {
 
             if (!_isAlive and (neighbors_cnt == 3 or neighbors_cnt ==1) )  {
                 _isAlive = true;
-            } else if (_isAlive and neighbors_cnt < 2 and neighbors_cnt >3) {
+            } else if (_isAlive and ( neighbors_cnt == 0 or neighbors_cnt == 2 or neighbors_cnt ==4) ) {
                 _isAlive = false;
-            }
-            age++;
+            } else if (_isAlive)
+                age++;
             neighbors_cnt = 0;
         }
 

@@ -61,29 +61,29 @@ int main () {
         Print the 2500th grid.
         */
 
-        int num_row, num_col;
+        // int num_row, num_col;
 
-        ifstream file;
-        file.open("RunLifeConway.in");
+        // ifstream file;
+        // file.open("RunLifeConway.in");
 
-        if(!file){
-            cout << "File Not found "<< endl;
-        }
+        // if(!file){
+        //     cout << "File Not found "<< endl;
+        // }
 
-        file >> num_row;
-        file >> num_col;        
+        // file >> num_row;
+        // file >> num_col;        
 
-        Life<ConwayCell> life(num_row, num_col);
+        // Life<ConwayCell> life(num_row, num_col);
  
-        // life.readBoardSize(fileStream);
-        life.replicateBoard(file);
+        // // life.readBoardSize(fileStream);
+        // life.replicateBoard(file);
 
-        life.simulateNth(283,10);
-        life.printBoard(cout);
-        life.simulateNth(40);
-        life.printBoard(cout);
-        life.simulateNth(2177);
-        life.printBoard(cout);
+        // life.simulateNth(283,10);
+        // life.printBoard(cout);
+        // life.simulateNth(40);
+        // life.printBoard(cout);
+        // life.simulateNth(2177);
+        // life.printBoard(cout);
         }
     catch (const invalid_argument&) {
         assert(false);}

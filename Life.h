@@ -98,6 +98,7 @@ class Life{
                         w << '@';
                         continue;
                     }
+                    // end Moat
                     board[i][j].print_cell(w); 
                 }
                 w << endl;
@@ -105,7 +106,6 @@ class Life{
        }
 
        void printneighbor_count (std::ostream& w) {
-            //cout << "printint neighbors" << endl;
             for (int i = 0; i < row_size+2; ++i){
                 for (int j= 0; j <col_size+2 ; ++j) {
 
@@ -128,9 +128,7 @@ class Life{
                 for(int j = 1; j < col_size+1; j++){
                   board[i][j].evolve();
                   if (board[i][j].get_liveness()) {
-                   // cout << endl << " incrementing population " << endl;
                     population++;
-                    //cout << endl << "pop is now " << population;
                   }
                 }
             }
