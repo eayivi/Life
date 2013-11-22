@@ -57,14 +57,6 @@ class AbstractCell {
           */
         void set_straight_neighbors (int x) ;
 
-        // -----------
-        // flipLiveStatus
-        // -----------
-        
-        /** 
-          * Kill or Revive cell based on previous status
-          */
-        void flipLiveStatus() ;
 
         // -----------
         // cometolife
