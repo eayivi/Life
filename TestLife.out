@@ -3,7 +3,7 @@ Running main() from gtest_main.cc
 [----------] Global test environment set-up.
 [----------] 4 tests from Life
 [ RUN      ] Life.method1
-[       OK ] Life.method1 (7 ms)
+[       OK ] Life.method1 (6 ms)
 [ RUN      ] Life.method2
 [       OK ] Life.method2 (1 ms)
 [ RUN      ] Life.method3
@@ -46,5 +46,5 @@ Running main() from gtest_main.cc
 [----------] 4 tests from Cell (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 4 test cases ran. (63 ms total)
+[==========] 16 tests from 4 test cases ran. (64 ms total)
 [  PASSED  ] 16 tests.

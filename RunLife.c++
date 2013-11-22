@@ -71,19 +71,18 @@ int main () {
             cout << "File Not found "<< endl;
         }
 
-        file >> num_row;
-        file >> num_col;        
+        while(file){
+            file >> num_row;
+            file >> num_col;        
 
-        Life<ConwayCell> life(num_row, num_col);
- 
-        life.replicateBoard(file);
+            if(file){
+                Life<ConwayCell> life(num_row, num_col);
 
-        life.simulateNth(283,10);
-        life.printBoard(cout);
-        life.simulateNth(40);
-        life.printBoard(cout);
-        life.simulateNth(2177);
-        life.printBoard(cout);
+                life.replicateBoard(file);
+                life.simulateNth(5,5);
+                life.printBoard(cout);
+                }
+                }
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -111,14 +110,19 @@ int main () {
             cout << "File Not found "<< endl;
         }
 
-        file >> num_row;
-        file >> num_col;        
+       while(file){
+            file >> num_row;
+            file >> num_col;        
 
-        Life<FredkinCell> life(num_row, num_col);
+            if(file){
+                Life<FredkinCell> life(num_row, num_col);
 
-        life.replicateBoard(file);
-        life.simulateNth(5,5);
-        life.printBoard(cout);
+                life.replicateBoard(file);
+                life.simulateNth(5,5);
+                life.printBoard(cout);
+                }
+        }
+        
 
 
         }
@@ -147,15 +151,18 @@ int main () {
             cout << "File Not found "<< endl;
         }
 
-        file >> num_row;
-        file >> num_col;        
+        while(file){
+            file >> num_row;
+            file >> num_col;        
 
-        Life<Cell> life(num_row, num_col);
+            if(file){
+                Life<Cell> life(num_row, num_col);
 
-        life.replicateBoard(file);
-        life.simulateNth(5,5);
-        life.printBoard(cout);
-
+                life.replicateBoard(file);
+                life.simulateNth(5,5);
+                life.printBoard(cout);
+                }
+            }
         }
     catch (const invalid_argument&) {
         assert(false);}
