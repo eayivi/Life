@@ -9,7 +9,6 @@ FredkinCell::FredkinCell () : AbstractCell (), age(0) { }
 void FredkinCell::set_diag_neighbors(int x) {}
 
 
-
 void FredkinCell::print_cell (std::ostream& w)  {
 	    if (_isAlive) {
 	       if (age < 10) {
