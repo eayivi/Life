@@ -65,6 +65,9 @@ class ConwayCell : public AbstractCell {
         
         /** 
           * Transform from another cell to this cell
+          * 
+          */
+    
         bool mutate () ;
         
         // -----------
