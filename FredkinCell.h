@@ -1,7 +1,7 @@
   // --------
   // FredkinCell.h
   // --------
-  #ifndef FredkinCell_h
+#ifndef FredkinCell_h
 #define FredkinCell_h
 
 #include <iostream> // istream, ostream
@@ -46,19 +46,6 @@ class FredkinCell : public AbstractCell {
                 age++;
             neighbors_cnt = 0;
         }
-
-     /*   AbstractCell * mutate() {
-            if (age == 2) {
-                cout << " I'm 2!!! :)" << endl;
-                delete p;
-                ConwayCell X (_isAlive, neighbors_cnt);
-                p = X.clone();
-                return p;
-            }
-            return this;
-
-
-        } */
 
         bool mutate () {
           return (age ==2);

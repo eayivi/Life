@@ -7,21 +7,21 @@ Running main() from gtest_main.cc
 [ RUN      ] Life.method2
 [       OK ] Life.method2 (1 ms)
 [ RUN      ] Life.method3
-[       OK ] Life.method3 (1 ms)
+[       OK ] Life.method3 (2 ms)
 [ RUN      ] Life.method4
 [       OK ] Life.method4 (1 ms)
-[----------] 4 tests from Life (20 ms total)
+[----------] 4 tests from Life (21 ms total)
 
 [----------] 4 tests from ConwayCell
 [ RUN      ] ConwayCell.method1
-[       OK ] ConwayCell.method1 (1 ms)
+[       OK ] ConwayCell.method1 (2 ms)
 [ RUN      ] ConwayCell.method2
 [       OK ] ConwayCell.method2 (1 ms)
 [ RUN      ] ConwayCell.method3
 [       OK ] ConwayCell.method3 (1 ms)
 [ RUN      ] ConwayCell.method4
 [       OK ] ConwayCell.method4 (1 ms)
-[----------] 4 tests from ConwayCell (4 ms total)
+[----------] 4 tests from ConwayCell (6 ms total)
 
 [----------] 4 tests from FredkinCell
 [ RUN      ] FredkinCell.method1
@@ -46,5 +46,5 @@ Running main() from gtest_main.cc
 [----------] 4 tests from Cell (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 4 test cases ran. (63 ms total)
+[==========] 16 tests from 4 test cases ran. (65 ms total)
 [  PASSED  ] 16 tests.

@@ -33,66 +33,12 @@ To document the program:
 #include <string>
 #include "Life.h"
 #include "ConwayCell.h"
-
+#include "Cell.h"
 using std::ifstream;
+
 // ----
 // main
 // ----
-
-// --------
-// includes
-// --------
-#include "Handle.h"
-#include "AbstractCell.h"
-
-
-class Cell : Handle<AbstractCell> {
-
- //    private:     
-    //  AbstractCell* abstractCell;
-
-    public:
-
-        Cell () : Handle( new FredkinCell()) {}
-
-        Cell(AbstractCell* p) : 
-            Handle<AbstractCell> (p){};
-
-
-        void print_cell(std::ostream& w) {
-            get()->print_cell(w);
-        }
-
-        void cometolife(){
-            get()->cometolife();
-        }
-    
-        bool get_liveness() {
-            return get()->get_liveness();
-        }
-
-        void set_straight_neighbors (int x) {
-           get()->set_straight_neighbors(x);
-        };
-
-        void set_diag_neighbors(int x) {
-            get()->set_diag_neighbors(x);    
-        }
-
-        void evolve() {
-            get()->evolve();
-
-            if (get()->mutate()) {
-              bool isAlive = get()->get_liveness();
-              AbstractCell* ptr = new ConwayCell (isAlive);
-              Cell q(ptr);
-              swap (q);
-             // p = X.clone();
-            }
-        }
-};
-
-
 
 
 int main () {
@@ -116,29 +62,28 @@ int main () {
         Print the 2500th grid.
         */
 
-        // int num_row, num_col;
+        int num_row, num_col;
 
-        // ifstream file;
-        // file.open("RunLifeConway.in");
+        ifstream file;
+        file.open("RunLifeConway.in");
 
-        // if(!file){
-        //     cout << "File Not found "<< endl;
-        // }
+        if(!file){
+            cout << "File Not found "<< endl;
+        }
 
-        // file >> num_row;
-        // file >> num_col;        
+        file >> num_row;
+        file >> num_col;        
 
-        // Life<ConwayCell> life(num_row, num_col);
+        Life<ConwayCell> life(num_row, num_col);
  
-        // // life.readBoardSize(fileStream);
-        // life.replicateBoard(file);
+        life.replicateBoard(file);
 
-        // life.simulateNth(283,10);
-        // life.printBoard(cout);
-        // life.simulateNth(40);
-        // life.printBoard(cout);
-        // life.simulateNth(2177);
-        // life.printBoard(cout);
+        life.simulateNth(283,10);
+        life.printBoard(cout);
+        life.simulateNth(40);
+        life.printBoard(cout);
+        life.simulateNth(2177);
+        life.printBoard(cout);
         }
     catch (const invalid_argument&) {
         assert(false);}
@@ -157,23 +102,23 @@ int main () {
         Print every grid (i.e. 0, 1, 2...5)
         */
 
-        // int num_row, num_col;
+        int num_row, num_col;
 
-        // ifstream file;
-        // file.open("RunLifeFredkin.in");
+        ifstream file;
+        file.open("RunLifeFredkin.in");
 
-        // if(!file){
-        //     cout << "File Not found "<< endl;
-        // }
+        if(!file){
+            cout << "File Not found "<< endl;
+        }
 
-        // file >> num_row;
-        // file >> num_col;        
+        file >> num_row;
+        file >> num_col;        
 
-        // Life<FredkinCell> life(num_row, num_col);
+        Life<FredkinCell> life(num_row, num_col);
 
-        // life.replicateBoard(file);
-        // life.simulateNth(5,5);
-        // life.printBoard(cout);
+        life.replicateBoard(file);
+        life.simulateNth(5,5);
+        life.printBoard(cout);
 
 
         }
