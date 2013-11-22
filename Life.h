@@ -123,15 +123,16 @@ class Life{
                 for (int j= 0; j <col_size+2 ; ++j) {
 
                     // Turn on Moat
-                    if (i ==0 or i == row_size+1 or j == 0 or j == col_size+1) {
-                        w << '@';
-                        continue;
-                    }
+                    //if (i ==0 or i == row_size+1 or j == 0 or j == col_size+1) {
+                    //    w << '@';
+                    //    continue;
+                    //}
                     // end Moat
                     board[i][j].print_cell(w); 
                 }
                 w << endl;
             }
+            w << endl;
        }
 
         // -----------
