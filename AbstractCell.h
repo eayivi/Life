@@ -54,18 +54,20 @@ class AbstractCell {
 
         virtual bool mutate() =0;
 
-        //virtual void evolve() = 0;
+        virtual AbstractCell* clone () const = 0;
+
+
 /*
         AbstractCell (const AbstractCell& that) :
                 _x (that._x),
                 _y (that._y)
             {}
-*/
+
         // virtual ~AbstractCell ()
-        //     {}
+             {}
 
-
-        virtual AbstractCell* clone () const = 0;
+*/
+             
 };
 
  #endif // AbstractCell_h

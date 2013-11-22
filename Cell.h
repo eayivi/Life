@@ -13,17 +13,11 @@
 
 class Cell : Handle<AbstractCell> {
 
- //    private:     
-	// 	AbstractCell* abstractCell;
 
 	public:
 	 	Cell(AbstractCell* p) : 
 			Handle<AbstractCell> (p){};
 
-
-
 };
-
-
 
  #endif // Cell_h 

@@ -20,16 +20,6 @@ class ConwayCell : public AbstractCell {
  
 
     protected:
-        /*bool equals (const AbstractCell& that) const {
-            if (const ConwayCell* const p = dynamic_cast<const ConwayCell*>(&that))
-                return AbstractCell::equals(*p) && (_r == p->_r);
-            return false;}*/
-
-        /*std::istream& read (std::istream& in) {
-            return AbstractCell::read(in) >> _r;}*/
-
-       /*std::ostream& write (std::ostream& out) const {
-            return AbstractCell::write(out) << " " << _r;}*/
 
     public:
         ConwayCell () :   AbstractCell () {
@@ -62,10 +52,6 @@ class ConwayCell : public AbstractCell {
             neighbors_cnt = 0;
         }
 
-       /* AbstractCell* mutate() {
-            return this;
-        }*/
-
         bool mutate () {
           return false;     // Conway Cells never mutate
         }
@@ -88,14 +74,10 @@ class ConwayCell : public AbstractCell {
             return *this;}
 */
 
-        // double area () const {
-        //     return 3.14 * _r * _r;}
 
         ConwayCell* clone () const {
             return new ConwayCell(*this);}
 
-        // int radius () const {
-        //     return _r;}
         };
 
  #endif // ConwayCell_h
