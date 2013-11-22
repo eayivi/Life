@@ -21,13 +21,6 @@ void AbstractCell::set_straight_neighbors (int x) {
             neighbors_cnt = x;      // not neighbors_cnt+=x, since it's a reset
         }
 
-void AbstractCell::flipLiveStatus(){
-            if(_isAlive){
-                _isAlive = false;
-            }else{
-                _isAlive = true;
-            }
-        }
 
 void AbstractCell::cometolife(){
                 _isAlive = true;
