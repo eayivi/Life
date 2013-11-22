@@ -5,8 +5,8 @@
 // --------
 // includes
 // --------
-#ifndef Cell_h
-#define Cell_h
+#ifndef ConwayCell_h
+#define ConwayCell_h
 
 #include <iostream> // istream, ostream
 #include <utility>  // !=

@@ -1,7 +1,7 @@
   // --------
   // FredkinCell.h
   // --------
-  #ifndef FredkinCell_h
+#ifndef FredkinCell_h
 #define FredkinCell_h
 
 #include <iostream> // istream, ostream
