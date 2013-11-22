@@ -4,12 +4,8 @@
 #ifndef FredkinCell_h
 #define FredkinCell_h
 
-#include <iostream> // istream, ostream
-#include <utility>  // !=
-#include <iostream> // istream, ostream
 #include "AbstractCell.h"
 
-using namespace std;
 class FredkinCell : public AbstractCell {
 
     private:
@@ -17,44 +13,18 @@ class FredkinCell : public AbstractCell {
 
 
     public:
-        FredkinCell () :   AbstractCell () {
-           age = 0;
-        }
+        FredkinCell ()  ;
         
-        void set_diag_neighbors(int x) {
-            // pass
-        }
+        void set_diag_neighbors(int) ;
 
-        void print_cell (std::ostream& w)  {
-            if (_isAlive) {
-               if (age < 10) {
-                    w << age;
-               } else 
-                    w << "+";
-            }
-            else
-                w << '-';
-        }
+        void print_cell (std::ostream& )  ;
 
-        void evolve() {
+        void evolve() ;
 
-            if (!_isAlive and (neighbors_cnt == 3 or neighbors_cnt ==1) )  {
-                _isAlive = true;
-            } else if (_isAlive and ( neighbors_cnt == 0 or neighbors_cnt == 2 or neighbors_cnt ==4) ) {
-                _isAlive = false;
-            } else if (_isAlive)
-                age++;
-            neighbors_cnt = 0;
-        }
-
-        bool mutate () {
-          return (age ==2);
-        }
-        
+        bool mutate () ;
 
 
-        FredkinCell* clone () const {
-            return new FredkinCell(*this);}
+        FredkinCell* clone () const ;
 };
 #endif // FredkinCell_h
   

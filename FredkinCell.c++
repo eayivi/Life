@@ -1,53 +1,43 @@
  // --------
 // FredkinCell.c++
 // --------
-#include <iostream> 
-#include <utility>  
-#include <iostream> 
 
-// class FredkinCell : public AbstractCell {
-//     private:
-//         int _r;
+#include "FredkinCell.h"
 
-//     protected:
-//         virtual bool equals (const AbstractCell& that) const {
-//             if (const FredkinCell* const p = dynamic_cast<const FredkinCell*>(&that))
-//                 return AbstractCell::equals(*p) && (_r == p->_r);
-//             return false;}
+FredkinCell::FredkinCell () : AbstractCell (), age(0) { }
 
-//         virtual std::istream& read (std::istream& in) {
-//             return AbstractCell::read(in) >> _r;}
+void FredkinCell::set_diag_neighbors(int x) {}
 
-//         virtual std::ostream& write (std::ostream& out) const {
-//             return AbstractCell::write(out) << " " << _r;}
 
-//     public:
-//         FredkinCell (int x, int y, int r) :
-//                 AbstractCell (x, y),
-//                 _r            (r)
-//             {}
-// /*
-//         FredkinCell (const ConwayCell& that) :
-//                 AbstractCell (that),
-//                 _r            (that._r)
-//             {}
 
-//         virtual ~FredkinCell ()
-//             {}
+void FredkinCell::print_cell (std::ostream& w)  {
+	    if (_isAlive) {
+	       if (age < 10) {
+	            w << age;
+	       } else 
+	            w << "+";
+	    }
+	    else
+	        w << '-';
+	}
 
-//         FredkinCell& operator = (const FredkinCell& that) {
-//             AbstractCell::operator=(that);
-//             _r = that._r;
-//             return *this;}
-// */
 
-//         virtual double area () const {
-//             return 3.14 * _r * _r;}
 
-//         virtual FredkinCell* clone () const {
-//             return new ConwayCell(*this);}
+void FredkinCell::evolve() {
 
-//         int radius () const {
-//             return _r;}};
- 
+	    if (!_isAlive and (neighbors_cnt == 3 or neighbors_cnt ==1) )  {
+	        _isAlive = true;
+	    } else if (_isAlive and ( neighbors_cnt == 0 or neighbors_cnt == 2 or neighbors_cnt ==4) ) {
+	        _isAlive = false;
+	    } else if (_isAlive)
+	        age++;
+	    neighbors_cnt = 0;
+	}
 
+bool FredkinCell::mutate() {
+          return (age ==2);
+        }
+
+FredkinCell * FredkinCell::clone () const {
+            return new FredkinCell(*this);
+        }
