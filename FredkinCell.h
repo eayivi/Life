@@ -6,7 +6,6 @@
 
 #include "AbstractCell.h"
 
-
 // ------
 // FredkinCell
 // ------
